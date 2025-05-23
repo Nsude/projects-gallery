@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Montreal";
+  src: url("./assets/fonts/NeueMontreal-Regular.otf");
+  font-weight: 400;
+}
+
+body {
+  font-size: 14px;
+  background-color: #FDFDFD;
+  color: #141414;
+  font-family: "Montreal";
+}
+
+@theme {
+  --font-main: "Montreal", Helvetica, sans-serif;
+
+  --color-myBlack: #141414;
+  --color-myWhite: #FDFDFD;
+  --color-myGreen: #5DEA7C;
+
+  --padding-desktop: 35px;
+  --ease-myEase2: cubic-bezier(0.40, 0, 0.24, 1);
+}

@@ -1,0 +1,18 @@
+/* ==== PROJECT LIST ==== */
+.project-list-con .list-first-item,
+.project-list-con .list-last-item {
+  transition: transform .4s cubic-bezier(0.40, 0, 0.24, 1);
+}
+
+.project-list-con:hover .list-first-item {
+  transform: translateX(15px);
+}
+
+.project-list-con:hover .list-last-item {
+  transform: translateX(-15px);
+}
+
+.project-list-con:hover {
+  color: var(--color-myGreen);
+  transition: color .2s;
+}
