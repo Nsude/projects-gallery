@@ -5,7 +5,7 @@ import { useRef } from "react";
 
 gsap.registerPlugin(CustomEase);
 
-const PreviewModal = ({projectList = [], activeIndex = 0, displayModal}) => {
+const PreviewModal = ({projectList = [], modal: {activeIndex, displayModal}}) => {
   const previewsRef = useRef();
   const containerRef = useRef();
   const myEase1 = CustomEase.create("custom", "0.76, 0, 0.24, 1");

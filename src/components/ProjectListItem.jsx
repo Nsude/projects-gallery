@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { useRef } from "react";
 
 
-const ProjectListItem = ({project: {name, services, duration, year}, index, setActiveIndex}) => {
+const ProjectListItem = ({project: {name, services, duration, year}, onMouseEnter}) => {
   const containerRef = useRef();
   const overlayRef = useRef();
   const linesRef = useRef([]);
@@ -48,7 +48,9 @@ const ProjectListItem = ({project: {name, services, duration, year}, index, setA
     }
 
     const handleMouseEnter = (e) => {
-      setActiveIndex(index);
+      // run external mouse enter function
+      onMouseEnter();
+      
       const direction = detectEntryPoint(e);
       const overlay = overlayRef.current;
 

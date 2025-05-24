@@ -17,8 +17,7 @@ export default App;
 
 
 const Projects = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [displayModal, setDisplayModal] = useState(false);
+  const [modal, setModal] = useState({activeIndex: 0, displayModal: false});
 
   return (
     <section 
@@ -35,16 +34,15 @@ const Projects = () => {
 
       {/* PROJECTS */}
       <div
-        onMouseEnter={() => setDisplayModal(true)}
-        onMouseLeave={() => setDisplayModal(false)} 
+        onMouseEnter={() => setModal(prev => { return {...prev, displayModal: true} })}
+        onMouseLeave={() => setModal(prev => { return {...prev, displayModal: false} })} 
       >
         {
           [...projectList, ...projectList].map((item, i) => (
             <ProjectListItem 
               key={`project-${i}`} 
               project={item}
-              index={i}
-              setActiveIndex={setActiveIndex}
+              onMouseEnter={() => setModal(prev => { return {...prev, activeIndex: i} })}
             />
           ))
         }
@@ -52,8 +50,7 @@ const Projects = () => {
 
       <PreviewModal 
         projectList={[...projectList, ...projectList]} 
-        activeIndex={activeIndex} 
-        displayModal={displayModal}/>
+        modal={modal}/>
     </section>
   )
 }
